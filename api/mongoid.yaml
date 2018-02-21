@@ -1,0 +1,15 @@
+development:
+  clients:
+    default:
+      database: nblog-dev
+      hosts:
+        - localhost:27017
+testing:
+  clients:
+    default:
+      database: heroku_s04mv6mh
+      hosts:
+        - ds245548.mlab.com:45548
+      options:
+        user: heroku_s04mv6mh
+        password: 2q4v1qsvvfkdkg7lbum6agh8mn
