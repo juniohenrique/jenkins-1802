@@ -1,9 +1,12 @@
 development:
   clients:
     default:
-      database: nblog-dev
+      database: blog-db-dev
       hosts:
-        - localhost:27017
+        - ds243728.mlab.com:43728
+      options:
+        user: qaninja
+        password: qaninja
 testing:
   clients:
     default:
