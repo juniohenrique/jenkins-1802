@@ -10,7 +10,7 @@ describe 'nBlog Api' do
         request = {
           title: 'Novo artigo',
           image: Faker::LoremPixel.image,
-          body: Faker::Lorem.paragraph
+          description: Faker::Lorem.paragraph
         }
         post 'api/posts', request.to_json
         expect_status(200)
@@ -23,7 +23,7 @@ describe 'nBlog Api' do
       it 'returns a list of posts' do
         get '/api/posts'
         expect_status(200)
-        expect_json_types('*', title: :string, body: :string)
+        expect_json_types('*', title: :string, description: :string)
       end
     end
     describe 'status 404' do
@@ -41,7 +41,7 @@ describe 'nBlog Api' do
         request = {
           title: 'Novo artigo 2',
           image: Faker::LoremPixel.image,
-          body: Faker::Lorem.paragraph
+          description: Faker::Lorem.paragraph
         }
         post 'api/posts', request.to_json
         @post = Post.where(title: request[:title]).first
@@ -50,7 +50,7 @@ describe 'nBlog Api' do
         request = {
           title: 'Novo artigo 2 atualizado',
           image: Faker::LoremPixel.image,
-          body: Faker::Lorem.paragraph
+          description: Faker::Lorem.paragraph
         }
         put 'api/posts/' + @post[:_id].to_s, request.to_json
         expect_status(200)
@@ -64,7 +64,7 @@ describe 'nBlog Api' do
         request = {
           title: 'Artigo que será removido',
           image: Faker::LoremPixel.image,
-          body: Faker::Lorem.paragraph
+          description: Faker::Lorem.paragraph
         }
         post 'api/posts', request.to_json
         @post = Post.where(title: request[:title]).first
