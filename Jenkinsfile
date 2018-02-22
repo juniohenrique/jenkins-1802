@@ -8,7 +8,7 @@ node {
         junit 'api/logs/unit_tests.xml'
     }
     stage("Deploy to QA") {
-        sh "ls"
+       deploy("testing")
     }
     stage("Run Functional Tests") {
          sh "ls"
@@ -16,6 +16,13 @@ node {
     stage("Deploy to Production") {
          sh "ls"
     }
+}
+
+def deploy(String env) {
+    sh "rm -rf .git && cd api && git init"
+    sh "cd api && heroku git:remote -a blog-api-${env}"
+    sh "cd api && git add . && git commit -m 'deploy'"
+    sh "cd api && git push heroku master --force"
 }
 
 def ruby(String commands) {
