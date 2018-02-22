@@ -10,9 +10,9 @@ development:
 testing:
   clients:
     default:
-      database: heroku_s04mv6mh
+      database: heroku_xpt0238f
       hosts:
-        - ds245548.mlab.com:45548
+        - ds243798.mlab.com:43798
       options:
-        user: heroku_s04mv6mh
-        password: 2q4v1qsvvfkdkg7lbum6agh8mn
+        user: qaninja
+        password: qaninja
