@@ -8,7 +8,7 @@ gem 'mongoid'
 
 group :test, :development do
   gem 'faker'
-  gem 'airborne', '>= 0.2.13'
+  gem 'airborne', '>= 0.3.4'
   gem 'rspec'
   gem 'rspec_junit_formatter'
 end
